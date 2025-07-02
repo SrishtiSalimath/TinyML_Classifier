@@ -1,0 +1,339 @@
+{
+    "_allocate_inputs": 4,
+    "_allocate_outputs": 4,
+    "cli_parameters": "generate --target stm32l4 --name network -m C:/Users/Srishti M Salimath/Downloads/comfort_predictor_v3.tflite --compression none --verbosity 1 --allocate-inputs --allocate-outputs --workspace C:/Users/SRISHT~1/AppData/Local/Temp/mxAI_workspace834543334063008952314200214817941 --output C:/Users/Srishti M Salimath/.stm32cubemx/network_output",
+    "cli_version": {
+        "extra": "19894",
+        "major": 1,
+        "micro": 0,
+        "minor": 0
+    },
+    "cli_version_str": "1.0.0-19894",
+    "code_size": 0,
+    "compression": [],
+    "date_time": "2025-07-01T16:27:37+0530",
+    "error": 0,
+    "error_str": [],
+    "exec_cmd": "generate",
+    "exec_duration": 0.0,
+    "hash": "0xe408cefa4a43831abd79dd7f87492598",
+    "inputs": [
+        "serving_default_keras_tensor_160"
+    ],
+    "layers": [
+        {
+            "c_id": [
+                0,
+                1
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 8,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        2
+                    ]
+                },
+                "rom_size": 192
+            },
+            "id": 0,
+            "inputs": [],
+            "name": "serving_default_keras_tensor_160",
+            "original": "",
+            "type": "Input"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 32,
+                "psize": 128,
+                "rom_size": 0
+            },
+            "id": 0,
+            "inputs": [],
+            "name": "sequential_4_1_dense_12_1_MatMul",
+            "original": "",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 16,
+                "psize": 64,
+                "rom_size": 0
+            },
+            "id": 0,
+            "inputs": [],
+            "name": "sequential_4_1_dense_12_1_BiasAdd_ReadVariableOp",
+            "original": "",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 48,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 64,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        16
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 0,
+            "inputs": [
+                "serving_default_keras_tensor_160",
+                "sequential_4_1_dense_12_1_MatMul",
+                "sequential_4_1_dense_12_1_BiasAdd_ReadVariableOp"
+            ],
+            "name": "gemm_0",
+            "original": "FULLY_CONNECTED",
+            "type": "Gemm"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 16,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 64,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        16
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 0,
+            "inputs": [
+                "gemm_0"
+            ],
+            "name": "nl_0_nl",
+            "original": "FULLY_CONNECTED",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                2,
+                3
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 128,
+                "psize": 512,
+                "rom_size": 544
+            },
+            "id": 1,
+            "inputs": [],
+            "name": "arith_constant1",
+            "original": "",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 8,
+                "psize": 32,
+                "rom_size": 0
+            },
+            "id": 1,
+            "inputs": [],
+            "name": "arith_constant3",
+            "original": "",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 136,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 32,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        8
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 1,
+            "inputs": [
+                "nl_0_nl",
+                "arith_constant1",
+                "arith_constant3"
+            ],
+            "name": "gemm_1",
+            "original": "FULLY_CONNECTED",
+            "type": "Gemm"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 8,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 32,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        8
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 1,
+            "inputs": [
+                "gemm_1"
+            ],
+            "name": "nl_1_nl",
+            "original": "FULLY_CONNECTED",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                4
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 8,
+                "psize": 32,
+                "rom_size": 36
+            },
+            "id": 2,
+            "inputs": [],
+            "name": "arith_constant",
+            "original": "",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 1,
+                "psize": 4,
+                "rom_size": 0
+            },
+            "id": 2,
+            "inputs": [],
+            "name": "arith_constant2",
+            "original": "",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 9,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 4,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 2,
+            "inputs": [
+                "nl_1_nl",
+                "arith_constant",
+                "arith_constant2"
+            ],
+            "name": "gemm_2",
+            "original": "FULLY_CONNECTED",
+            "type": "Gemm"
+        },
+        {
+            "c_id": [
+                5
+            ],
+            "extras": {
+                "n_macc": 10,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 4,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 3,
+            "inputs": [
+                "gemm_2"
+            ],
+            "name": "nl_3",
+            "original": "LOGISTIC",
+            "type": "Nonlinearity"
+        }
+    ],
+    "model_files": [
+        "C:\\Users\\Srishti M Salimath\\Downloads\\comfort_predictor_v3.tflite"
+    ],
+    "model_n_params": 193,
+    "model_name": "comfort_predictor_v3",
+    "model_size": 772,
+    "model_type": "tflite",
+    "name": "network",
+    "outputs": [
+        "nl_3"
+    ],
+    "ram_io_size": [
+        0,
+        0
+    ],
+    "ram_size": 96,
+    "report_version": 1.1,
+    "rom_cfact": 1.0,
+    "rom_heap_inspector": 2048,
+    "rom_inputs": [
+        {
+            "c_size": 8,
+            "c_type": "float",
+            "name": "serving_default_keras_tensor_160"
+        }
+    ],
+    "rom_n_macc": 227,
+    "rom_outputs": [
+        {
+            "c_size": 4,
+            "c_type": "float",
+            "name": "nl_3"
+        }
+    ],
+    "rom_size": 772,
+    "strategy": "",
+    "tools_api_version": "1.0.0-19894",
+    "tools_version": "1.0.0-19894",
+    "val_error": -1.0,
+    "val_error_desc": "None (None) #-1",
+    "val_metrics": []
+}
