@@ -413,35 +413,35 @@
   "environment": {
     "device": null,
     "generated_model": {
-      "generated_time": "2025-07-02T14:42:22+0530",
+      "generated_time": "2025-07-03T22:01:40+0530",
       "model_files": [
         {
           "name": "network_data_params.h",
-          "signature": "0xae284809315b9b59905f6c2969c2972d"
+          "signature": "0xc885ae1553b77eff2bea33a3040241ec"
         },
         {
           "name": "network_data_params.c",
-          "signature": "0x7eb321f2d7394a9bfddca4d2a9a4f389"
+          "signature": "0xdc66d01ce557b083e7773d28a787d1d5"
         },
         {
           "name": "network_data.h",
-          "signature": "0x217f8e6d7206e8030c7be4c09ad81dfa"
+          "signature": "0x0407d4fd7855227936a32ff255cc55ce"
         },
         {
           "name": "network_data.c",
-          "signature": "0xa3c0dcaa142502dca8fef200abc60f58"
+          "signature": "0x9004af07d9dafec9d129c62382311389"
         },
         {
           "name": "network_config.h",
-          "signature": "0x98bec8001603de540b4189aed697235d"
+          "signature": "0x94a7a0a6829231120ab24ebd3a30be43"
         },
         {
           "name": "network.h",
-          "signature": "0xf4849c45e664ada01309a11b171e5596"
+          "signature": "0x31725d3d004668cfd191785aedf97bf4"
         },
         {
           "name": "network.c",
-          "signature": "0xf40214f142e5fdd1a2b6936e139a87ee"
+          "signature": "0x618609761f56f1f4045fc05397f9f008"
         }
       ],
       "n_params": null,
@@ -449,11 +449,11 @@
       "size": null,
       "type": null
     },
-    "network_signature": "0x41674af6a0216647",
+    "network_signature": "0x2d851c64ee4abc53",
     "test_name": "",
     "tools": [
       {
-        "arguments": "generate --target stm32l4 --name network -m C:/Users/Srishti M Salimath/Downloads/fuzzy_comfort_model2.tflite --compression none --verbosity 1 --allocate-inputs --allocate-outputs --workspace C:/Users/SRISHT~1/AppData/Local/Temp/mxAI_workspace1635433227457007910433952480150910 --output C:/Users/Srishti M Salimath/.stm32cubemx/network_output",
+        "arguments": "analyze --target stm32l4 --name network -m C:/Users/Srishti M Salimath/Downloads/fuzzy_comfort_model2.tflite --compression none --verbosity 1 --allocate-inputs --allocate-outputs --workspace C:/Users/SRISHT~1/AppData/Local/Temp/mxAI_workspace2762995660541007485271507438621716 --output C:/Users/Srishti M Salimath/.stm32cubemx/network_output",
         "environment": [
           "STATS_TYPE=X-CUBE-AI"
         ],
@@ -792,12 +792,12 @@
       0,
       0
     ],
-    "kernel_flash": null,
-    "kernel_ram": null,
-    "series": "generic",
-    "toolchain": null,
-    "toolchain_flash": null,
-    "toolchain_ram": null,
+    "kernel_flash": 9762,
+    "kernel_ram": 1984,
+    "series": "stm32l4",
+    "toolchain": "arm-none-eabi-gcc (GNU Tools for STM32 13.3.rel1.20240926-1715) 13.3.1 20240614",
+    "toolchain_flash": 638,
+    "toolchain_ram": 0,
     "weights": 2564
   },
   "memory_pools": [
